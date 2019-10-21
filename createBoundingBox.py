@@ -27,7 +27,7 @@ block_max = array([-2**60,-2**60,-2**60])
 try:
     for l in open(filename,'r'):
         if "vertex" in l:
-            v = [float(s) for s in l.strip('\n').split(' ')[-3:]]
+            v = [float(s) for s in l.strip('\n').split()[-3:]]
             # update max
             block_max = maximum(block_max,v)
             # update min

@@ -43,7 +43,7 @@ rotation_mat = matrix([d1,d2,d3])
 try:
     for l in open(filename,'r'):
         if "vertex" in l:
-            v = matrix([float(s) for s in l.strip('\n').split(' ')[-3:]]).T
+            v = matrix([float(s) for s in l.strip('\n').split()[-3:]]).T
             # rotate into provided reference system
             v = (rotation_mat*v).A1
             # update max
